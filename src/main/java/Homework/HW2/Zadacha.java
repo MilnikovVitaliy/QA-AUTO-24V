@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Zadacha {
-            //запуск 1,2,3,4 задач. 5я отдельным доком идет
+            //Заданя 1,2,3,4 задач.
         private static class Url {
             private static final String uhomki = "https://uhomki.com.ua/";
             private static final String zoo = "https://zoo.kiev.ua/";
@@ -29,62 +29,62 @@ public class Zadacha {
         public static void main(String[] args) throws InterruptedException, WithoutText, WithoutID, WithoutName, WithoutTagName, WithoutClass {
             System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
             WebDriver driver = new ChromeDriver();
-            driver.manage().window().maximize(); //вызов большого окна
+            driver.manage().window().maximize();
 
             // 1 ЗАДАЧА
 
 
-            driver.get(Url.uhomki); //открываем окно у хомки
-            Thread.sleep(3000);//замедляем действие
-            Set<String> setFirst = driver.getWindowHandles(); //получаем идент.номер первого окна из множества открытых окон
+            driver.get(Url.uhomki);
+            Thread.sleep(3000);
+            Set<String> setFirst = driver.getWindowHandles();
 
-            ((JavascriptExecutor) driver).executeScript("window.open()"); //открываем новое пустое окно
-            Set<String> setSecond = driver.getWindowHandles(); //получаем идент.номер второго окна из множества открытых окон
+            ((JavascriptExecutor) driver).executeScript("window.open()");
+            Set<String> setSecond = driver.getWindowHandles();
             setSecond.removeAll(setFirst);//убираем дубликаты
-            String secondDesc = setSecond.iterator().next(); //получаем дискриптор нужного нам окна
-            driver.switchTo().window(secondDesc); //переключаемся на нужный дискриптор
-            driver.get(Url.zoo); //грузим в полученный дискриптор нужную ссылку
-            Thread.sleep(2000);//замедляем действие
+            String secondDesc = setSecond.iterator().next();
+            driver.switchTo().window(secondDesc);
+            driver.get(Url.zoo);
+            Thread.sleep(2000);
 
-            ((JavascriptExecutor) driver).executeScript("window.open()"); //открываем новое пустое окно
-            Set<String> setThird = driver.getWindowHandles(); //получаем идент.номер третьего окна из множества открытых окон
-            setThird.removeAll(setFirst);//убираем дубликаты
-            setThird.removeAll(setSecond);//убираем дубликаты
-            String thirdDesc = setThird.iterator().next(); //получаем дискриптор нужного нам окна
-            driver.switchTo().window(thirdDesc); //переключаемся на нужный дискриптор
-            driver.get(Url.w3school);//грузим в полученный дискриптор нужную ссылку
-            Thread.sleep(2000);//замедляем действие
+            ((JavascriptExecutor) driver).executeScript("window.open()");
+            Set<String> setThird = driver.getWindowHandles();
+            setThird.removeAll(setFirst);
+            setThird.removeAll(setSecond);
+            String thirdDesc = setThird.iterator().next();
+            driver.switchTo().window(thirdDesc);
+            driver.get(Url.w3school);
+            Thread.sleep(2000);
 
-            ((JavascriptExecutor) driver).executeScript("window.open()"); //открываем новое пустое окно
-            Set<String> setFourth = driver.getWindowHandles(); //получаем идент.номер четвертого окна из множества открытых окон
-            setFourth.removeAll(setFirst);//убираем дубликаты
-            setFourth.removeAll(setSecond);//убираем дубликаты
-            setFourth.removeAll(setThird);//убираем дубликаты
-            String fourthDesc = setFourth.iterator().next(); //получаем дискриптор нужного нам окна
-            driver.switchTo().window(fourthDesc); //переключаемся на нужный дискриптор
-            driver.get(Url.taxi);//грузим в полученный дискриптор нужную ссылку
-            Thread.sleep(2000);//замедляем действие
+            ((JavascriptExecutor) driver).executeScript("window.open()");
+            Set<String> setFourth = driver.getWindowHandles();
+            setFourth.removeAll(setFirst);
+            setFourth.removeAll(setSecond);
+            setFourth.removeAll(setThird);
+            String fourthDesc = setFourth.iterator().next();
+            driver.switchTo().window(fourthDesc);
+            driver.get(Url.taxi);
+            Thread.sleep(2000);
 
-            ((JavascriptExecutor) driver).executeScript("window.open()"); //открываем новое пустое окно
-            Set<String> setFifth = driver.getWindowHandles(); //получаем идент.номер пятого окна из множества открытых окон
-            setFifth.removeAll(setFirst);//убираем дубликаты
-            setFifth.removeAll(setSecond);//убираем дубликаты
-            setFifth.removeAll(setThird);//убираем дубликаты
-            setFifth.removeAll(setFourth);//убираем дубликаты
-            String fifthDesc = setFifth.iterator().next(); //получаем дискриптор нужного нам окна
-            driver.switchTo().window(fifthDesc); //переключаемся на нужный дискриптор
-            driver.get(Url.klopotenko);//грузим в полученный дискриптор нужную ссылку
-            Thread.sleep(2000);//замедляем действие
+            ((JavascriptExecutor) driver).executeScript("window.open()");
+            Set<String> setFifth = driver.getWindowHandles();
+            setFifth.removeAll(setFirst);
+            setFifth.removeAll(setSecond);
+            setFifth.removeAll(setThird);
+            setFifth.removeAll(setFourth);
+            String fifthDesc = setFifth.iterator().next();
+            driver.switchTo().window(fifthDesc);
+            driver.get(Url.klopotenko);
+            Thread.sleep(2000);
 
-            Set<String> count = driver.getWindowHandles(); //сделали массив из дискрипторов
-            Iterator<String> i = count.iterator(); //разделили их
+            Set<String> count = driver.getWindowHandles();
+            Iterator<String> i = count.iterator();
 
             for (int k = 0; k < count.size(); k++) {
                 i.hasNext();
                 String childWindow = i.next();
                 driver.switchTo().window(childWindow);
-                System.out.println(driver.getCurrentUrl()); //получение текущей ссылки
-                System.out.println(driver.getTitle()); //получение названия страницы
+                System.out.println(driver.getCurrentUrl());
+                System.out.println(driver.getTitle());
                 {
                     if (driver.getTitle().toLowerCase().contains("зоопарк")) {
                         driver.close();

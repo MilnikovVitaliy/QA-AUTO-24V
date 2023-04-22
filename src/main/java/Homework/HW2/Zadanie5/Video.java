@@ -16,8 +16,8 @@ public class Video {
     public static void main(String[] args)throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize(); //вызов большого окна
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10)); //отработка скрипта 10 сек
+        driver.manage().window().maximize();
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
         driver.get(Url.uhomki1);
         Thread.sleep(2000);
         WebElement search = driver.findElement(By.className("search__input"));
