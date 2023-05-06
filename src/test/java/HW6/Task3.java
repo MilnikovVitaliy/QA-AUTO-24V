@@ -67,26 +67,8 @@ public class Task3 {
         Thread.sleep(3000);
         String rez3 = driver.findElement(By.xpath("//h1[@id='j-catalog-header']")).getText();
         String rezUpdate3 = rez3.replace("Результаты поиска ","");
-        assertTrue(rezUpdate.equals("«"+input3+"»"));
+        assertTrue(rezUpdate3.equals("«"+input3+"»"));
         driver.quit();
-
-
-
-        /*WebElement rezSmes1 = driver.findElement(By.xpath("//h1[@id='j-catalog-header']"));
-        System.out.println(rezSmes1.getText());
-        String smes = "смесь";
-
-
-        /*if (rezSmes1.getText().contains(smes)){
-            System.out.println("тест пройден");
-        }else {
-            System.out.println("тест не ппойден");}*/
-
-
-
-
-
-
 
 
 

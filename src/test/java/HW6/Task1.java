@@ -34,11 +34,7 @@ public class Task1 {
         assertTrue("количество окон не 4", description.size() == 4);
 
 
-        /*System.out.println(description.size());
-        if (description.size()==4){
-            System.out.println("ТЕСТ ПРОЙДЕН :)");
-        } else {
-            System.out.println("ЭТО ПРОВАЛ :(");}*/// КАК ВАРИАНТ МОЖНО ТАК
+
     }
 }
 
