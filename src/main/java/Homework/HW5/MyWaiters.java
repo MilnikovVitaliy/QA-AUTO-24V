@@ -50,12 +50,7 @@ public class MyWaiters {
     public void textToBePresentInElementValue(By by,String text){
         waitForFunction(ExpectedConditions.textToBePresentInElementLocated(by,text),EXPLICITY_WAIT);
     }
-    public Boolean textToBePresentInElementValueReturn(WebElement element,String text){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.textToBePresentInElementValue(element,text));
-    } // - Возвращает Boolean
-    public Boolean textToBePresentInElementValueReturn(By by,String text){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.textToBePresentInElementValue(by,text));
-    } // - Возвращает Boolean
+
 
 
 
@@ -63,9 +58,7 @@ public class MyWaiters {
     public void invisibilityOf(WebElement element){
         waitForFunction(ExpectedConditions.invisibilityOf(element),EXPLICITY_WAIT);
     }
-    public Boolean invisibilityOfReturn(WebElement element){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.invisibilityOf(element));
-    } // - Возвращает Boolean
+
 
 
 
@@ -73,9 +66,7 @@ public class MyWaiters {
     public void titleContaince(String text){
         waitForFunction(ExpectedConditions.titleContains(text),EXPLICITY_WAIT);
     }
-    public Boolean titleContainceReturn(String text){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.titleContains(text));
-    } // - Возвращает Boolean
+
 
 
 
@@ -83,9 +74,7 @@ public class MyWaiters {
     public void titleIs(String text){
         waitForFunction(ExpectedConditions.titleIs(text), EXPLICITY_WAIT);
     }
-    public Boolean titleIsReturn(String text){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.titleIs(text));
-    } // - Возвращает Boolean
+
 
 
 
@@ -112,12 +101,8 @@ public class MyWaiters {
     public void elementToBeSelected(WebElement element){
         waitForFunction(ExpectedConditions.elementToBeSelected(element),EXPLICITY_WAIT);
     }
-    public Boolean elementToBeSelectedReturn(By by){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.elementToBeSelected(by));
-    } // - Возвращает Boolean
-    public Boolean elementToBeSelectedReturn(WebElement element){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.elementToBeSelected(element));
-    } // - Возвращает Boolean
+
+
 
 
 
@@ -129,12 +114,8 @@ public class MyWaiters {
     public void elementSelectionStateToBe(WebElement element, Boolean boo){
         waitForFunction(ExpectedConditions.elementSelectionStateToBe(element, boo),EXPLICITY_WAIT);
     }
-    public Boolean elementSelectionStateToBeReturn(By by, Boolean boo){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.elementSelectionStateToBe(by,boo));
-    } // - Возвращает Boolean
-    public Boolean elementSelectionStateToBeReturn(WebElement element, Boolean boo){
-        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.elementSelectionStateToBe(element,boo));
-    } //  - Возвращает Boolean
+
+
 
 
 
@@ -161,19 +142,12 @@ public class MyWaiters {
     public void frameToBeAvailableAndSwitchToIt(WebElement element){
         waitForFunction(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element),EXPLICITY_WAIT);
     }
-    //public WebElement frameToBeAvailableAndSwitchToItReturn(By by){
-    //    return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(by));
-    //}  -  НЕ ВОЗВРАЩАЕТ WebElement
 
 
 
 
-    public void alertIsPresent(){
-        waitForFunction(ExpectedConditions.alertIsPresent(),EXPLICITY_WAIT);
-    }
-    //public WebElement alertIsPresentReturn(){
-    //    return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.alertIsPresent());
-    //}   -  НЕ ВОЗВРАЩАЕТ WebElement
+
+
 
 
 }
