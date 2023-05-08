@@ -143,6 +143,10 @@ public class MyWaiters {
         waitForFunction(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element),EXPLICITY_WAIT);
     }
 
+    public void alertIsPresent(){
+        waitForFunction(ExpectedConditions.alertIsPresent(),EXPLICITY_WAIT);
+    }
+
 
 
 
